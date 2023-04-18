@@ -1,0 +1,27 @@
+<div class="container-fluid">
+
+<button type="button" class="btn btn-outline-dark mt-2 mb-2" routerLink="/clientes/cadastrar">Novo</button>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">CPF</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Renda Mensal</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <th scope="row">{{customer.cpf}}</th>
+        <td>{{customer.name}}</td>
+        <td>{{customer.phone}}</td>
+        <td>{{customer.monthlyIncome | currency: 'BRL'}}</td>
+        <td>
+          <button type="button" class="btn btn-dark btn-sm" routerLink="/clientes/editar/{{this.customer.cpf}}">Editar</button>
+          <button type="button" class="btn btn-danger btn-sm mx-1" (click)="delete(this.customer.cpf)">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>

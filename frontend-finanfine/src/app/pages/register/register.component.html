@@ -1,0 +1,56 @@
+<h1 class="display-6 mt-2">Cadastrar</h1>
+<hr>
+
+<div class="container-fluid">
+
+    <form [formGroup]="customerForm" (ngSubmit)="create()">
+        <div class="row">
+            <div class="col-3">
+                <div class="mb-4">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input id="cpf" type="text" class="form-control" formControlName="cpf"/>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input id="nome" type="text" class="form-control" formControlName="name"/>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input id="telefone" type="text" class="form-control" formControlName="phone"/>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="mb-3">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input id="cep" type="text" class="form-control" formControlName="cep"/>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="mb-3">
+                    <label for="endereço" class="form-label">Endereço</label>
+                    <input id="endereço" type="text" class="form-control" formControlName="address"/>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="mb-3">
+                    <label for="número" class="form-label">Número</label>
+                    <input id="número" type="text" class="form-control" formControlName="addressNumber"/>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-2">
+                <div class="mb-3">
+                    <label for="renda" class="form-label">Renda Mensal</label>
+                    <input id="renda" type="text" class="form-control" formControlName="monthlyIncome"/>
+                </div>
+            </div>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" [disabled]="!customerForm.valid" class="btn btn-dark mt-2 btn-lg">Cadastrar</button>
+    </form>
+</div>
